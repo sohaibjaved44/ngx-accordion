@@ -13,8 +13,6 @@ import {
 import {Accordion} from "./Accordion";
 import {AccordionToggle} from "./AccordionToggle";
 
-
-
 @Component({
     selector: "accordion-group",
     template: `
@@ -28,6 +26,16 @@ import {AccordionToggle} from "./AccordionToggle";
         <div class="caret" [style.display]="accordion.showArrows ? '' : 'none'">
         </div>
       </h4>
+    </div>
+    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
+      <div class="panel-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
+      <div class="panel-body">
+        <ng-content></ng-content>
+      </div>
     </div>
     <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
       <div class="panel-body">
